@@ -30,16 +30,17 @@ rho2   = 1.225;                           % kg/m3
 nu1    = mu1/rho1;                        % m^2/s
 nu2    = mu2/rho2;                        % m^2/s
 rho_mu = (rho2*mu2)/(rho1*mu1);
-
+firstDeriv_Top
+firstDeriv_Bot
 % Initial conditions
-Top_firstDeriv  = 0.5873;
-Bot_firstDeriv  = Top_firstDeriv;
-Top_secondDeriv = 0.1996;
-Bot_secondDeriv = (1/sqrt(rho_mu))*Top_secondDeriv;
+TopfirstDeriv_Top  = 0.5873;
+firstDeriv_Bot  = firstDeriv_Top;
+f1pp = 0.1996;
+f2pp = (1/sqrt(rho_mu))*f1pp;
 
 % Integration
-[eta1,f1] = ode45(@TAM532_BlasiusFunc, 0:0.001:20, [0 Top_firstDeriv Top_secondDeriv]);
-[eta2,f2] = ode45(@TAM532_BlasiusFunc, 0:-0.001:-20, [0 Bot_firstDeriv Bot_secondDeriv]);
+[eta1,f1] = ode45(@TAM532_BlasiusFunc, 0:0.001:20, [0 firstDeriv_Top f1pp]);
+[eta2,f2] = ode45(@TAM532_BlasiusFunc, 0:-0.001:-20, [0 firstDeriv_Bot f2pp]);
 
 %----------------------------Case 2---------------------------------%
 elseif Case == 2
@@ -56,14 +57,14 @@ nu2    = mu2/rho2;                        % m^2/s
 rho_mu = (rho2*mu2)/(rho1*mu1);
 
 % Initial conditions
-Top_firstDeriv  = 0.7657;
-Top_secondDeriv = 0.1219;
-Bot_firstDeriv  = Top_firstDeriv;
-Bot_secondDeriv = (1/sqrt(rho_mu))*Top_secondDeriv;
+firstDeriv_Top  = 0.7657;
+f1pp = 0.1219;
+firstDeriv_Bot  = firstDeriv_Top;
+f2pp = (1/sqrt(rho_mu))*f1pp;
 
 % Integration
-[eta1,f1] = ode45(@TAM532_BlasiusFunc, 0:0.001:20, [0 Top_firstDeriv Top_secondDeriv]);
-[eta2,f2] = ode45(@TAM532_BlasiusFunc, 0:-0.001:-20, [0 Bot_firstDeriv Bot_secondDeriv]);
+[eta1,f1] = ode45(@TAM532_BlasiusFunc, 0:0.001:20, [0 firstDeriv_Top f1pp]);
+[eta2,f2] = ode45(@TAM532_BlasiusFunc, 0:-0.001:-20, [0 firstDeriv_Bot f2pp]);
 %----------------------------Case 3---------------------------------%
 elseif Case == 3
 % Fluid properties
@@ -79,14 +80,14 @@ nu2    = mu2/rho2;                        % m^2/s
 rho_mu = (rho2*mu2)/(rho1*mu1);
 
 % Initial conditions
-Top_firstDeriv  = 0.9020172;
-Top_secondDeriv = 0.05352672;
-Bot_firstDeriv  = Top_firstDeriv;
-Bot_secondDeriv = (1/sqrt(rho_mu))*Top_secondDeriv;
+firstDeriv_Top  = 0.9020172;
+f1pp = 0.05352672;
+firstDeriv_Bot  = firstDeriv_Top;
+f2pp = (1/sqrt(rho_mu))*f1pp;
 
 % Integration
-[eta1,f1] = ode45(@TAM532_BlasiusFunc, 0:0.001:20, [0 Top_firstDeriv Top_secondDeriv]);
-[eta2,f2] = ode45(@TAM532_BlasiusFunc, 0:-0.001:-20, [0 Bot_firstDeriv Bot_secondDeriv]);
+[eta1,f1] = ode45(@TAM532_BlasiusFunc, 0:0.001:20, [0 firstDeriv_Top f1pp]);
+[eta2,f2] = ode45(@TAM532_BlasiusFunc, 0:-0.001:-20, [0 firstDeriv_Bot f2pp]);
 
 %----------------------------Case 4---------------------------------%
 elseif Case == 4
@@ -103,14 +104,14 @@ nu2    = mu2/rho2;                        % m^2/s
 rho_mu = (rho2*mu2)/(rho1*mu1);
 
 % Initial conditions
-Top_firstDeriv  = 0.902016;
-Top_secondDeriv = 0.053526;
-Bot_firstDeriv  = Top_firstDeriv;
-Bot_secondDeriv = (1/sqrt(rho_mu))*Top_secondDeriv;
+firstDeriv_Top  = 0.902016;
+f1pp = 0.053526;
+firstDeriv_Bot  = firstDeriv_Top;
+f2pp = (1/sqrt(rho_mu))*f1pp;
 
 % Integration
-[eta1,f1] = ode45(@TAM532_BlasiusFunc, 0:0.001:20, [0 Top_firstDeriv Top_secondDeriv]);
-[eta2,f2] = ode45(@TAM532_BlasiusFunc, 0:-0.001:-20, [0 Bot_firstDeriv Bot_secondDeriv]);
+[eta1,f1] = ode45(@TAM532_BlasiusFunc, 0:0.001:20, [0 firstDeriv_Top f1pp]);
+[eta2,f2] = ode45(@TAM532_BlasiusFunc, 0:-0.001:-20, [0 firstDeriv_Bot f2pp]);
 
 %----------------------------Case 5---------------------------------%
 elseif Case == 5
@@ -127,14 +128,14 @@ nu2    = mu2/rho2;                        % m^2/s
 rho_mu = (rho2*mu2)/(rho1*mu1);
 
 % Initial conditions
-Top_firstDeriv  = 0.8634;
-Top_secondDeriv = 0.0736;
-Bot_firstDeriv  = Top_firstDeriv;
-Bot_secondDeriv = (1/sqrt(rho_mu))*Top_secondDeriv;
+firstDeriv_Top  = 0.8634;
+f1pp = 0.0736;
+firstDeriv_Bot  = firstDeriv_Top;
+f2pp = (1/sqrt(rho_mu))*f1pp;
 
 % Integration
-[eta1,f1] = ode45(@TAM532_BlasiusFunc, 0:0.001:20, [0 Top_firstDeriv Top_secondDeriv]);
-[eta2,f2] = ode45(@TAM532_BlasiusFunc, 0:-0.001:-20, [0 Bot_firstDeriv Bot_secondDeriv]);
+[eta1,f1] = ode45(@TAM532_BlasiusFunc, 0:0.001:20, [0 firstDeriv_Top f1pp]);
+[eta2,f2] = ode45(@TAM532_BlasiusFunc, 0:-0.001:-20, [0 firstDeriv_Bot f2pp]);
 
 %----------------------------Case 6---------------------------------%
 elseif Case == 6
@@ -151,14 +152,14 @@ nu2    = mu2/rho2;                        % m^2/s
 rho_mu = (rho2*mu2)/(rho1*mu1);
 
 % Initial conditions
-Top_firstDeriv  = 0.8256;
-Top_secondDeriv = 0.0928;
-Bot_firstDeriv  = Top_firstDeriv;
-Bot_secondDeriv = (1/sqrt(rho_mu))*Top_secondDeriv;
+firstDeriv_Top  = 0.8256;
+f1pp = 0.0928;
+firstDeriv_Bot  = firstDeriv_Top;
+f2pp = (1/sqrt(rho_mu))*f1pp;
 
 % Integration
-[eta1,f1] = ode45(@TAM532_BlasiusFunc, 0:0.001:20, [0 Top_firstDeriv Top_secondDeriv]);
-[eta2,f2] = ode45(@TAM532_BlasiusFunc, 0:-0.001:-20, [0 Bot_firstDeriv Bot_secondDeriv]);
+[eta1,f1] = ode45(@TAM532_BlasiusFunc, 0:0.001:20, [0 firstDeriv_Top f1pp]);
+[eta2,f2] = ode45(@TAM532_BlasiusFunc, 0:-0.001:-20, [0 firstDeriv_Bot f2pp]);
 %----------------------------Case 7---------------------------------%
 elseif Case == 7
 % Fluid properties
@@ -174,14 +175,14 @@ nu2    = mu2/rho2;                        % m^2/s
 rho_mu = (rho2*mu2)/(rho1*mu1);
 
 % Initial conditions
-Top_firstDeriv  = 0.647439;
-Top_secondDeriv = 0.17506;
-Bot_firstDeriv  = Top_firstDeriv;
-Bot_secondDeriv = (1/sqrt(rho_mu))*Top_secondDeriv;
+firstDeriv_Top  = 0.647439;
+f1pp = 0.17506;
+firstDeriv_Bot  = firstDeriv_Top;
+f2pp = (1/sqrt(rho_mu))*f1pp;
 
 % Integration
-[eta1,f1] = ode45(@TAM532_BlasiusFunc, 0:0.001:20, [0 Top_firstDeriv Top_secondDeriv]);
-[eta2,f2] = ode45(@TAM532_BlasiusFunc, 0:-0.001:-20, [0 Bot_firstDeriv Bot_secondDeriv]);
+[eta1,f1] = ode45(@TAM532_BlasiusFunc, 0:0.001:20, [0 firstDeriv_Top f1pp]);
+[eta2,f2] = ode45(@TAM532_BlasiusFunc, 0:-0.001:-20, [0 firstDeriv_Bot f2pp]);
 %----------------------------Case 8---------------------------------%
 elseif Case == 8
 % Fluid properties
@@ -197,14 +198,14 @@ nu2    = mu2/rho2;                        % m^2/s
 rho_mu = (rho2*mu2)/(rho1*mu1);
 
 % Initial conditions
-Top_firstDeriv  = 0.7290;
-Top_secondDeriv = 0.1390;
-Bot_firstDeriv  = Top_firstDeriv;
-Bot_secondDeriv = (1/sqrt(rho_mu))*Top_secondDeriv;
+firstDeriv_Top  = 0.7290;
+f1pp = 0.1390;
+firstDeriv_Bot  = firstDeriv_Top;
+f2pp = (1/sqrt(rho_mu))*f1pp;
 
 % Integration
-[eta1,f1] = ode45(@TAM532_BlasiusFunc, 0:0.001:20, [0 Top_firstDeriv Top_secondDeriv]);
-[eta2,f2] = ode45(@TAM532_BlasiusFunc, 0:-0.001:-20, [0 Bot_firstDeriv Bot_secondDeriv]);
+[eta1,f1] = ode45(@TAM532_BlasiusFunc, 0:0.001:20, [0 firstDeriv_Top f1pp]);
+[eta2,f2] = ode45(@TAM532_BlasiusFunc, 0:-0.001:-20, [0 firstDeriv_Bot f2pp]);
 
 %----------------------------Case 9---------------------------------%
 elseif Case == 9
@@ -221,14 +222,14 @@ nu2    = mu2/rho2;                        % m^2/s
 rho_mu = (rho2*mu2)/(rho1*mu1);
 
 % Initial conditions
-Top_firstDeriv  = 0.78558;
-Top_secondDeriv = 0.11239;
-Bot_firstDeriv  = Top_firstDeriv;
-Bot_secondDeriv = (1/sqrt(rho_mu))*Top_secondDeriv;
+firstDeriv_Top  = 0.78558;
+f1pp = 0.11239;
+firstDeriv_Bot  = firstDeriv_Top;
+f2pp = (1/sqrt(rho_mu))*f1pp;
 
 % Integration
-[eta1,f1] = ode45(@TAM532_BlasiusFunc, 0:0.001:20, [0 Top_firstDeriv Top_secondDeriv]);
-[eta2,f2] = ode45(@TAM532_BlasiusFunc, 0:-0.001:-20, [0 Bot_firstDeriv Bot_secondDeriv]);
+[eta1,f1] = ode45(@TAM532_BlasiusFunc, 0:0.001:20, [0 firstDeriv_Top f1pp]);
+[eta2,f2] = ode45(@TAM532_BlasiusFunc, 0:-0.001:-20, [0 firstDeriv_Bot f2pp]);
 end
 %------------------------Post Processing----------------------------%
 x = linspace(0,10,length(eta1))';
@@ -262,4 +263,4 @@ Sol = horzcat(x,delta1,delta2,deltas1,deltas2,theta1,theta2,SF1,SF2,...
     eta1,eta2,f1(:,2),f2(:,2));
 
 % Export data
-% save(sprintf('CASE%d.txt',Case), 'Sol', '-ascii');
+save(sprintf('CASE%d.txt',Case), 'Sol', '-ascii');
