@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Let's Play a Game!</title>
+
+    </head>
+	
+    <body>
+	<!-- Linking this html to mp3.js and words.js, I downloded words.js from the instruction -->
+	<script src="WordMatching.js"></script>
+	<script src="words.js"></script>
+		
+		<!-- Create a table -->
+		<table border = 1>
+			<tr>
+				<td><input id ="topleft" type = "text" size = "1" maxlength = "1"></td>
+				<td><input id ="topcenter" type = "text" size = "1" maxlength = "1"></td>
+				<td><input id ="topright" type = "text" size = "1" maxlength = "1"></td>
+			</tr>
+			<tr>
+				<td><input id ="midleft" type = "text" size = "1" maxlength = "1"></td>
+				<td><input id ="midcenter" type = "text" size = "1" maxlength = "1"></td>
+				<td><input id ="midright" type = "text" size = "1" maxlength = "1"></td>
+			</tr>
+			<tr>
+				<td><input id ="bottomleft" type = "text" size = "1" maxlength = "1"></td>
+				<td><input id ="bottomcenter" type = "text" size = "1" maxlength = "1"></td>
+				<td><input id ="bottomright" type = "text" size = "1" maxlength = "1"></td>
+			</tr>
+		</table>
+		
+		<!-- add a button after skipping a line using <br> -->
+		<br>
+		<button onClick="decode();">decode!</button>
+    </body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation"></nav>
+</html>
